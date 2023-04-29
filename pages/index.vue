@@ -2,10 +2,6 @@
   <div>Hello World</div>
 </template>
 
-<script>
-export default {
-  name: 'index',
-};
-</script>
+<script lang="ts" setup></script>
 
-<style scoped></style>
+<style lang="scss" scoped></style>
