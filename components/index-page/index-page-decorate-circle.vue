@@ -44,8 +44,8 @@ onBeforeUnmount(() => {
   height: v-bind(decorateCircleSize);
   z-index: 1;
 
-  box-shadow: 0 0 100px 100px var(--blue-opacity-0-15);
-  background-color: var(--blue-opacity-0-15);
+  box-shadow: 0 0 100px 100px var(--white-opacity-0-3);
+  background-color: var(--white-opacity-0-3);
   opacity: 0;
   border-radius: 100%;
   @include defaultTransition(all);
