@@ -5,7 +5,7 @@
     "strict": true,
     "types": [
       "@nuxt/types",
-      "@nuxtjs/axios"
+      "@nuxtjs/i18n"
     ],
   }
 }

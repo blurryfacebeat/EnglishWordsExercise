@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { I18N_LOCALE } from './i18n/i18n.types';
+
 export default defineNuxtConfig({
   css: ['@/assets/styles/main.scss'],
 
@@ -26,5 +28,15 @@ export default defineNuxtConfig({
         },
       },
     },
+  },
+
+  pinia: {
+    autoImports: [['defineStore', 'definePiniaStore']],
+  },
+
+  i18n: {
+    locales: Object.values(I18N_LOCALE),
+    defaultLocale: I18N_LOCALE.EN,
+    vueI18n: './i18n/i18n.config.ts',
   },
 });
