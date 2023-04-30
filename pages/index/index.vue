@@ -11,16 +11,20 @@
 
       <base-button @click="onStartButtonClick" max-width="128px">{{ $t('index.startButtonMessage') }}</base-button>
 
-      <index-page-locale-switcher />
+      <locale-switcher />
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+definePageMeta({
+  layout: 'landing-layout',
+});
+
 const localeRoute = useLocaleRoute();
 
 const onStartButtonClick = () => {
-  const route = localeRoute({ name: 'sentence-page' });
+  const route = localeRoute({ name: 'words-page' });
 
   if (route) return navigateTo(route.fullPath);
 };
@@ -46,10 +50,6 @@ const onStartButtonClick = () => {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
-  background: linear-gradient(to right, var(--black-1), var(--blue-1), var(--blue-2));
-  background-size: 600% 600%;
-  animation: BgAnimate 20s ease infinite;
 
   &__wrapper {
     position: relative;

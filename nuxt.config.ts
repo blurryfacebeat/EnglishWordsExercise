@@ -4,7 +4,7 @@ import { I18N_LOCALE } from './i18n/i18n.types';
 export default defineNuxtConfig({
   css: ['@/assets/styles/main.scss'],
 
-  modules: ['@pinia/nuxt', '@nuxtjs/i18n'],
+  modules: ['@pinia/nuxt', '@nuxtjs/i18n', 'nuxt-svgo', '@nuxt/image-edge'],
 
   typescript: {
     strict: true,

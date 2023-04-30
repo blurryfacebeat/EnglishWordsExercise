@@ -1,6 +1,6 @@
 <template>
   <div class="landing-page__locale-switcher">
-    <NuxtLink
+    <nuxt-link
       v-for="[key, value] in Object.entries(I18N_LOCALE)"
       :key="value"
       :to="switchLocalePath(value)"
@@ -8,7 +8,7 @@
       active-class="locale-switcher__item_active"
     >
       {{ key }}
-    </NuxtLink>
+    </nuxt-link>
   </div>
 </template>
 

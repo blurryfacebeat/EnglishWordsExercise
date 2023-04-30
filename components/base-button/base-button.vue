@@ -28,8 +28,8 @@ const { maxWidth, height } = withDefaults(defineProps<IBaseButtonProps>(), {
   align-items: center;
   justify-content: center;
 
-  border: 1px solid var(--white-opacity-0-5);
-  background-color: var(--blue-3);
+  border: 1px solid var(--black-opacity-0-5);
+  background-color: var(--main-white);
   border-radius: 6px;
   cursor: pointer;
 
@@ -37,19 +37,32 @@ const { maxWidth, height } = withDefaults(defineProps<IBaseButtonProps>(), {
 
   @media (any-hover: hover) {
     &:hover {
-      background-color: var(--blue-4);
+      background-color: var(--blue-7);
+      border-color: var(--white-opacity-0-5);
+
+      .base-button__text {
+        color: var(--main-white);
+      }
     }
   }
 
   &:active {
-    background-color: var(--blue-5);
+    background-color: var(--blue-7);
+    border-color: var(--white-opacity-0-5);
+    filter: contrast(2);
+
+    .base-button__text {
+      color: var(--main-white);
+    }
   }
 
   &__text {
     text-transform: uppercase;
-    color: var(--main-white);
+    color: var(--main-black);
     font-size: var(--fz-medium);
     font-weight: var(--fw-bold);
+
+    @include defaultTransition(all);
   }
 }
 </style>
