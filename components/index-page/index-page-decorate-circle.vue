@@ -12,10 +12,12 @@ const decorateCircleSize: Ref<string> = ref('100px');
 const mouseMoveHandlerWithDispose = () => {
   const handlerFunction = (event: MouseEvent) => {
     window.requestAnimationFrame(() => {
-      if (!decorateCircleRef.value.style.opacity) decorateCircleRef.value.style.opacity = '1';
+      if (decorateCircleRef.value?.style) {
+        if (!decorateCircleRef.value.style.opacity) decorateCircleRef.value.style.opacity = '1';
 
-      decorateCircleRef.value.style.top = `${event.clientY - parseInt(decorateCircleSize.value, 10) / 2}px`;
-      decorateCircleRef.value.style.left = `${event.clientX - parseInt(decorateCircleSize.value, 10) / 2}px`;
+        decorateCircleRef.value.style.top = `${event.clientY - parseInt(decorateCircleSize.value, 10) / 2}px`;
+        decorateCircleRef.value.style.left = `${event.clientX - parseInt(decorateCircleSize.value, 10) / 2}px`;
+      }
     });
   };
 

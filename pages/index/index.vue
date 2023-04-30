@@ -9,7 +9,7 @@
         {{ $t('index.titleMessage') }}
       </h3>
 
-      <base-button @click="onStartButtonClick" width="124px">{{ $t('index.startButtonMessage') }}</base-button>
+      <base-button @click="onStartButtonClick" max-width="128px">{{ $t('index.startButtonMessage') }}</base-button>
 
       <index-page-locale-switcher />
     </div>
@@ -18,9 +18,6 @@
 
 <script lang="ts" setup>
 const localeRoute = useLocaleRoute();
-
-import IndexPageLocaleSwitcher from '~/components/index-page/index-page-locale-switcher.vue';
-import IndexPageDecorateCircle from '~/components/index-page/index-page-decorate-circle.vue';
 
 const onStartButtonClick = () => {
   const route = localeRoute({ name: 'sentence-page' });

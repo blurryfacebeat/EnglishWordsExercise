@@ -8,12 +8,12 @@
 
 <script lang="ts" setup>
 interface IBaseButtonProps {
-  width?: string;
+  maxWidth?: string;
   height?: string;
 }
 
-const { width, height } = withDefaults(defineProps<IBaseButtonProps>(), {
-  width: 'max-content',
+const { maxWidth, height } = withDefaults(defineProps<IBaseButtonProps>(), {
+  maxWidth: 'max-content',
   height: '32px',
 });
 </script>
@@ -21,7 +21,8 @@ const { width, height } = withDefaults(defineProps<IBaseButtonProps>(), {
 <style lang="scss" scoped>
 .base-button {
   padding: 10px;
-  width: v-bind(width);
+  width: 100%;
+  max-width: v-bind(maxWidth);
   height: v-bind(height);
   display: flex;
   align-items: center;
