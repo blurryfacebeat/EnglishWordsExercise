@@ -9,6 +9,8 @@
         <p class="exercise-block__word">Cucumber</p>
       </div>
     </div>
+
+    <words-page-exercise-answer :word="'Cucumber'" />
   </div>
 </template>
 
@@ -19,7 +21,8 @@ import SpeachModule from '~/components/speach-module/speach-module.vue';
 <style lang="scss" scoped>
 .words-page__exercise-block {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  gap: 30px;
 
   .exercise-block__word-wrapper {
     display: flex;

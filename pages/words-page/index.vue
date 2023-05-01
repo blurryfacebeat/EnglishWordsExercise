@@ -6,7 +6,11 @@
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const words = await $fetch('/api/words');
+
+console.log('hahah', words);
+</script>
 
 <style lang="scss" scoped>
 .words-page {

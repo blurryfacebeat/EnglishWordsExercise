@@ -23,6 +23,15 @@ button {
   background-color: transparent;
 }
 
+input {
+  font-family: 'Poppins', sans-serif;
+  color: var(--main-black);
+
+  &::placeholder {
+    font-family: inherit;
+  }
+}
+
 html,
 body {
   overflow: hidden;
