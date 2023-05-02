@@ -1,14 +1,15 @@
 import { wordsItems } from '~/server/wordsItems';
 
-export default defineEventHandler(async (event) => {
+export interface ICheckWordResponse {
+  success: boolean;
+}
+
+export default defineEventHandler(async (event): Promise<ICheckWordResponse> => {
   const body = await readBody(event);
 
   const availableWord = wordsItems.find((item) => item.ru === body.word);
 
-  if (availableWord?.en === body.enWord) return 'success';
+  if (availableWord?.en === body.enWord) return { success: true };
 
-  throw createError({
-    statusCode: 400,
-    statusMessage: '',
-  });
+  return { success: false };
 });

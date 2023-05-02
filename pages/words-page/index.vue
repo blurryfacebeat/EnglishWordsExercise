@@ -1,15 +1,15 @@
 <template>
   <div class="words-page">
     <exercise-container>
-      <words-page-exercise-block />
+      <words-page-exercise-block :words="data.words" />
     </exercise-container>
   </div>
 </template>
 
 <script lang="ts" setup>
-const words = await $fetch('/api/words');
+import { IWordItem } from '~/server/wordsItems';
 
-console.log('hahah', words);
+const { data }: Array<IWordItem> = await useLazyFetch<Array<IWordItem>>('/api/words');
 </script>
 
 <style lang="scss" scoped>

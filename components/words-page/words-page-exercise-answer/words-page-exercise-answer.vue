@@ -9,16 +9,24 @@
 <script lang="ts" setup>
 import { Ref } from 'vue';
 
+import { ICheckWordResponse } from '~/server/api/checkWord.post';
+
 interface IProps {
   word: string;
 }
 
 const { word } = defineProps<IProps>();
 
+interface IEmits {
+  (e: 'checkAnswer', success: boolean): void;
+}
+
+const emit = defineEmits<IEmits>();
+
 const inputValue: Ref<string> = ref('');
 
 const checkAnswer = async () => {
-  const result = await $fetch('/api/checkWord', {
+  const response: ICheckWordResponse = await $fetch('/api/checkWord', {
     method: 'POST',
     body: {
       enWord: word,
@@ -26,9 +34,9 @@ const checkAnswer = async () => {
     },
   });
 
-  console.log(321, result);
+  emit('checkAnswer', response.success);
 
-  return result;
+  return response.success;
 };
 </script>
 
