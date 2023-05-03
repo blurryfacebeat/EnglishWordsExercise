@@ -34,6 +34,8 @@ const checkAnswer = async () => {
     },
   });
 
+  console.log(321, response);
+
   emit('checkAnswer', response.success);
 
   return response.success;
